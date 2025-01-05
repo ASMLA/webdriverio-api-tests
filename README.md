@@ -132,8 +132,13 @@ O comando fará:
 No final, você verá o resultado no console (graças ao `spec-reporter`).
 
 ## 9. Integração com CI
+Em qualquer pipeline (GitHub Actions, GitLab CI, Jenkins, etc.):
 
-### Exemplo (GitHub Actions):
+Instale as dependências (npm ci ou npm install).
+Execute o WebdriverIO (npx wdio).
+Isso é suficiente para rodar os testes de API automaticamente em cada push ou Pull Request.
+
+### (GitHub Actions - Arquivo de configuração):
 
 ```yaml
 name: CI
@@ -153,7 +158,7 @@ jobs:
       - run: npx wdio
 ```
 
-## 10. Geração de relatórios - Optamos por ser mais visual e completo
+## 10. Geração de relatórios - Optamos pelo Allure por ser mais visual e completo
 
 Instale o Allure Reporter:
 
