@@ -94,7 +94,7 @@ mochaOpts: {
 
 Dessa forma, o WebdriverIO não tentará abrir nenhum navegador e estará focado em testes de API.
 
-## 6. Estrutura de pastas de testes
+## 6. Estrutura de pastas dos testes
 
 O padrão definido pelo wizard deve ser algo como `./test/specs/**/*.js`.  
 Crie essa estrutura:
