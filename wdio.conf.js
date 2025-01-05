@@ -6,8 +6,11 @@ exports.config = {
   exclude: [],
   maxInstances: 1, // Apenas uma instância para testes de API
 
-  // Capabilities (vazio para testes de API)
-  capabilities: [],
+  // Capabilities (fictícias para rodar testes de API)
+  capabilities: [{
+      maxInstances: 1,
+      browserName: 'fake', // Capacidade fictícia
+  }],
 
   // Configurações gerais
   logLevel: 'info',
