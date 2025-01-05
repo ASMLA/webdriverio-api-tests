@@ -23,6 +23,5 @@ jobs:
 
     - name: Gerar relatórios Allure
       run: |
-        npx allure generate allure-results --clean
-        npx allure open
+        npx allure generate allure-results -o allure-report
       if: always()
