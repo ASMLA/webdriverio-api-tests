@@ -1,0 +1,28 @@
+name: CI Pipeline
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout do código
+      uses: actions/checkout@v2
+
+    - name: Configurar Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+
+    - name: Instalar dependências
+      run: npm ci
+
+    - name: Executar testes
+      run: npx wdio
+
+    - name: Gerar relatórios Allure
+      run: |
+        npx allure generate allure-results --clean
+        npx allure open
+      if: always()
