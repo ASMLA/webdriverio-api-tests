@@ -15,7 +15,7 @@ npm init -y
 
 Esse comando criará o arquivo package.json com as configurações básicas do seu projeto.
 
-# 3. Instale as dependências necessárias
+## 3. Instale as dependências necessárias
 
 Mesmo para testes de API, aproveitamos a estrutura do WebdriverIO:
 
@@ -37,14 +37,14 @@ npm install --save-dev ^
 - axios: Biblioteca para fazer chamadas HTTP (GET, POST, PUT, DELETE...).
 - chai: Biblioteca de asserção (pode usar expect, assert, etc.).
 
-# 4. Gere o arquivo de configuração do WebdriverIO
+## 4. Gere o arquivo de configuração do WebdriverIO
 
 Execute o wizard do WebdriverIO para criar automaticamente o wdio.conf.js:
 
 ```bash
 npx wdio config
 
-# Passo a passo do wizard:
+Passo a passo do wizard:
 - Onde salvar as configurações? Escolha wdio.conf.js.
 - Tipo de teste? Selecione local.
 - Framework? Escolha mocha.
@@ -56,7 +56,7 @@ npx wdio config
 
 Isso criará um arquivo wdio.conf.js na raiz do projeto.
 
-5. Ajustes no wdio.conf.js para testes de API
+## 5. Ajustes no wdio.conf.js para testes de API
 
 Abra o wdio.conf.js e faça as seguintes alterações:
 
@@ -77,7 +77,7 @@ Abra o wdio.conf.js e faça as seguintes alterações:
 
 Dessa forma, o WebdriverIO não tentará abrir nenhum navegador e estará focado em testes de API.
 
-6. Estrutura de pastas de testes
+## 6. Estrutura de pastas de testes
 
 O padrão definido pelo wizard deve ter sido algo como ./test/specs/**/*.js.
 Crie essa estrutura:
@@ -86,7 +86,7 @@ test
 └── specs
     └── usersApi.spec.js
 
-7. Criando os testes solicitados
+## 7. Criando os testes solicitados
 No arquivo test/specs/usersApi.spec.js
 Criei todos os testes solicitados:
  - >> Deve listar todos os usuários (GET /usuarios)
@@ -96,7 +96,7 @@ Criei todos os testes solicitados:
    >> Deve excluir um usuário (DELETE /usuarios/{id})
 
 
-8. Executando os testes localmente
+## 8. Executando os testes localmente
 
 Para executar, basta digitar num prompt:
 
@@ -109,7 +109,7 @@ O comando:
 
 No final, você verá o resultado no console (graças ao spec-reporter).
 
-9. Integração com CI
+## 9. Integração com CI
 
 Em qualquer pipeline (GitHub Actions, GitLab CI, Jenkins, etc.):
 
@@ -136,7 +136,7 @@ jobs:
       - run: npm install
       - run: npx wdio
 
-10. Geração de relatórios
+## 10. Geração de relatórios
 
 O @wdio/spec-reporter já fornece um relatório no console, mas, optei por algo mais visual e robusto, como o Allure:
 
