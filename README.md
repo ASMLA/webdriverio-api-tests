@@ -1,33 +1,25 @@
-Guia Passo a Passo para Configurar Testes de API com WebdriverIO (https://serverest.dev/)
+# Guia Passo a Passo para Configurar Testes de API com WebdriverIO (Desafio: https://serverest.dev/)
 
-Este documento apresenta um guia detalhado para configurar WebdriverIO com foco em testes de API com as seguintes instruções:
+Este documento apresenta um guia detalhado para configurar **WebdriverIO** com foco em **testes de API**
+---
 
-"Você está trabalhando em uma aplicação que gerencia informações de usuários (Criação,
-atualização, exclusão e leitura de usuário). A aplicação expõe uma API RESTfull para
-realizar essas operações. Os endpoints da API são os seguintes:
-○ GET /users: Retorna uma lista de todos os usuários.
-○ POST /users: Cria um novo usuário.
-○ GET /users/{id}: Retorna os detalhes de um usuário específico.
-○ PUT /users/{id}: Atualiza as informações de um usuário.
-○ DELETE /users/{id}: Exclui um usuário.
-Sugestão de API: https://serverest.dev/#/"
+## 1. Crie um diretório para seu projeto
 
-
-1. Crie um diretório para seu projeto
-
+```bash
 mkdir webdriverio-api-tests
 cd webdriverio-api-tests
 
-2. Inicialize o projeto Node.js
-
+## 2. Inicialize o projeto Node.js
+```bash
 npm init -y
 
 Esse comando criará o arquivo package.json com as configurações básicas do seu projeto.
 
-3. Instale as dependências necessárias
+# 3. Instale as dependências necessárias
 
 Mesmo para testes de API, aproveitamos a estrutura do WebdriverIO:
 
+```bash
 npm install --save-dev ^
   @wdio/cli ^
   @wdio/local-runner ^
@@ -36,7 +28,7 @@ npm install --save-dev ^
   axios ^
   chai
 
-O que cada dependência faz:
+# O que cada dependência faz:
 
 - @wdio/cli: CLI do WebdriverIO para configurar o projeto.
 - @wdio/local-runner: Permite rodar testes localmente.
@@ -45,13 +37,14 @@ O que cada dependência faz:
 - axios: Biblioteca para fazer chamadas HTTP (GET, POST, PUT, DELETE...).
 - chai: Biblioteca de asserção (pode usar expect, assert, etc.).
 
-4. Gere o arquivo de configuração do WebdriverIO
+# 4. Gere o arquivo de configuração do WebdriverIO
 
 Execute o wizard do WebdriverIO para criar automaticamente o wdio.conf.js:
 
+```bash
 npx wdio config
 
-Passo a passo do wizard:
+# Passo a passo do wizard:
 - Onde salvar as configurações? Escolha wdio.conf.js.
 - Tipo de teste? Selecione local.
 - Framework? Escolha mocha.
