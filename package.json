@@ -1,14 +1,14 @@
-  {
+{
   "name": "webdriverio-api-tests",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "description": "Testes de API usando WebdriverIO",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx wdio run wdio.conf.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "André Leite",
   "license": "ISC",
-  "description": "",
   "devDependencies": {
     "@wdio/allure-reporter": "^9.5.0",
     "@wdio/cli": "^9.5.1",
