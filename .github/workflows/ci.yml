@@ -21,6 +21,9 @@ jobs:
     - name: Executar testes
       run: npx wdio
 
+    - name: Limpar relatórios antigos
+      run: rm -rf allure-report
+
     - name: Gerar relatórios Allure
       run: |
         npx allure generate allure-results -o allure-report
