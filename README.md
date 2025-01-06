@@ -83,6 +83,7 @@ Abra o `wdio.conf.js` e faça as seguintes alterações:
 // ou deixe como array vazio:
 capabilities: [],
 ```
+Dessa forma, o WebdriverIO não tentará abrir nenhum navegador e estará focado em testes de API.
 
 - Ajuste o timeout do Mocha se necessário:
 
@@ -91,8 +92,6 @@ mochaOpts: {
     timeout: 60000,
 },
 ```
-
-Dessa forma, o WebdriverIO não tentará abrir nenhum navegador e estará focado em testes de API.
 
 ## 6. Estrutura de pastas dos testes
 
