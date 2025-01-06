@@ -27,17 +27,3 @@ jobs:
       with:
         name: html-test-report
         path: ./reports/html-report/report.html
-
-    - name: Upload JUnit Report
-      if: always()
-      uses: actions/upload-artifact@v3
-      with:
-        name: junit-test-report
-        path: ./reports/junit
-
-    - name: Upload Allure Results (se configurado)
-      if: always()
-      uses: actions/upload-artifact@v3
-      with:
-        name: allure-results
-        path: ./reports/allure-results

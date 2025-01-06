@@ -143,6 +143,16 @@ exports.config = {
     'spec',
   ],
 
+  reporters: [
+    ['html', {
+        debug: false,
+        outputDir: './reports/html-report',
+        filename: 'report.html',
+        reportTitle: 'Test Results',
+        showInBrowser: false,
+    }],
+],
+
 
   // Options to be passed to Mocha.
   // See the full list at http://mochajs.org/
