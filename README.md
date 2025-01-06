@@ -120,13 +120,16 @@ No arquivo `test/specs/usersApi.spec.js`, criamos todos os testes solicitados no
 Para executar, basta:
 
 ```bash
-npx wdio
+npm run test ou  npm run test:debug
+
 ```
 
-O comando fará:
+O comando npm run test fará:
 1. Ler o `wdio.conf.js`.
 2. Procurar arquivos no padrão `test/specs/*.js`.
 3. Executar os testes.
+
+e o comando npm run test:debug fará o mesmo só que em modo debug (Caso seja necessário)
 
 No final, você verá o resultado no console (graças ao `spec-reporter`).
 
@@ -157,30 +160,19 @@ jobs:
       - run: npx wdio
 ```
 
-## 10. Geração de relatórios - Optamos pelo Allure por ser mais visual e completo
-
-Instale o Allure Reporter:
+## 10. Geração de relatórios - Optamos pelo SPEC pois é simples e bem objetivo
 
 ```bash
-npm install --save-dev @wdio/allure-reporter
+npm install --save-dev @wdio/spec-reporter
 ```
 
 Configure no `wdio.conf.js`:
 
 ```javascript
-reporters: [
-  'spec',
-  ['allure', {
-    outputDir: 'allure-results',
-  }],
-],
+reporters: ['spec'],
 ```
 
-Para gerar e abrir o relatório:
-
-```bash
-npx allure generate allure-results --clean && npx allure open
-```
+Para gerar o relatório, basta executar os testes que no final ele exibe um resumo. 
 
 ## Estrutura Final de Pastas
 
@@ -205,5 +197,5 @@ npx allure generate allure-results --clean && npx allure open
 7. Criando os testes solicitados
 8. Execute localmente (`npx wdio`).
 9. Integre no CI para execução automática.
-10. Relatório Allure
+10. Relatório SPEC
 

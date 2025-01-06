@@ -3,9 +3,11 @@
   "version": "1.1.0",
   "description": "Testes de API usando WebdriverIO",
   "main": "index.js",
-  "scripts": {
-    "test": "npx wdio run wdio.conf.js"
+"scripts": {
+    "test": "wdio",
+    "test:debug": "wdio --logLevel debug"  
   },
+
   "keywords": [],
   "author": "André Leite",
   "license": "ISC",

@@ -63,6 +63,7 @@ exports.config = {
   framework: 'mocha',
   reporters: ['spec'],
 
+
   mochaOpts: {
     timeout: 60000
   },
