@@ -3,7 +3,7 @@ name: CI Pipeline Testes API Carrefour
 on: [push, pull_request]
 
 jobs:
-  pipeline-ci-desafio-carrefour:
+  pipeline-ci-desafio-carrefour_:
     runs-on: ubuntu-latest
 
     steps:
@@ -13,17 +13,10 @@ jobs:
     - name: Configurar Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '18' # Versão estável e compatível com mais pacotes WebdriverIO
+        node-version: '22'
 
     - name: Instalar dependências
       run: npm ci
 
     - name: Executar testes
-      run: npx wdio run wdio.conf.js
-
-    - name: Upload HTML Report
-      if: always() # Sempre faz upload, mesmo em caso de falha
-      uses: actions/upload-artifact@v3
-      with:
-        name: html-test-report
-        path: ./reports/html-report/report.html
+      run: npx wdio
